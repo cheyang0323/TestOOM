@@ -10,6 +10,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class TestController {
     @GetMapping("/{name}")
     public String tryIt(@PathVariable String name) throws Exception {
+        Long maxMemory = Runtime.getRuntime().maxMemory();
+        System.out.println("Total memory: " + maxMemory);
+        int[] matrix = new int[(int) (maxMemory + 1024000)];
+        for (int i = 0; i < matrix.length; ++i) {
+            matrix[i] = i + 1;
+        }
         int iteratorValue = 20;
         System.out.println("\n=================> OOM test started..\n");
         for (int outerIterator = 1; outerIterator < 20; outerIterator++) {
