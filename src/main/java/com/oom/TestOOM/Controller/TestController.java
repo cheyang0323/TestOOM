@@ -13,7 +13,7 @@ public class TestController {
 
         // update
         long[][] ary = new long[Integer.MAX_VALUE][Integer.MAX_VALUE];
-        return "Hello, " + name;
+        return "Hello, " + name + "\n";
     }
 
     @GetMapping("/good")
