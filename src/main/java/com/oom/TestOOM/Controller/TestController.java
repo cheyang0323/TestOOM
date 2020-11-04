@@ -18,6 +18,6 @@ public class TestController {
 
     @GetMapping("/good")
     public String normal() {
-        return "A good call...";
+        return "A good call...\n";
     }
 }
